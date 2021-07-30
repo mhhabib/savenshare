@@ -1,0 +1,182 @@
+{% extends "savensharebase/base.html" %}
+{% load static %}
+
+{% block title %} Save'nShare {% endblock %}
+{% block content %}
+
+<div class="container" style="margin-top: 3.5rem;">
+        <div class="row">
+            <!-- main section -->
+
+            <div class="col-md-8">
+              <div class="header">
+                <h3><a href="/" style="text-decoration: none;">Save'nShare</a></h3>
+                <p>Save your link, post and file. Then share with your favorite one</p>
+              </div>
+
+              <!-- mobile view menu -->
+              <div class="mobile-view-menu">
+                <ul class="menubutton justify-content-center">
+                    <li><a href="{% url 'create-link' %}">create</a></li>
+                    <li><a href="{% url 'sharelinks' %}">Share</a></li>
+                    <li><a href="#contact">Settings</a></li>
+                    <li><a href="{% url 'logout' %}" class="active">Logout</a></li>
+                </ul>
+              </div>
+              {% if linkposts|length or posts|length or linkfiles|length %}
+
+                <!-- Important Links -->
+                {% if linkposts %}
+                  <div class="card">
+                    <div class="card-header">
+                      <h5>Important Links</h5>
+                    </div>
+                    <div class="card-body">
+                      <ul>
+                        {% for linkpost in linkposts %}
+                        <li><a href="{{linkpost.weblink}}" target="_blank">{{linkpost.title}}</a></li>
+                        {% endfor %}
+                      </ul>  
+                    </div>
+                  </div>
+                {% endif %}
+
+                <!-- Important Posts -->
+                {% if posts%}
+                  <div class="card" id="postlink">
+                    <div class="card-header">
+                      <h5>Important Posts</h5>
+                    </div>
+                    <div class="card-body">
+                      <ul>
+                        {% for post in posts %}
+                        <li><a href="{% url 'details' author=post.author.username pk=post.id %}" target="_blank">{{post.posttitle}}</a></li>
+                        {% endfor %}
+                      </ul>  
+                    </div>
+                  </div>
+                {% endif %}
+                
+                <!-- Important Files -->
+                {% if linkfiles %}
+                  <div class="card">
+                    <div class="card-header">
+                      <h5>Important Files</h5>
+                    </div>
+                    <div class="card-body">
+                      <ul>
+                        {% for file in linkfiles %}
+                        <li><a href="#">{{file.filetitle}}</a></li>
+                        {% endfor %}
+                      </ul>  
+                    </div>
+                  </div>
+                {% endif %}
+
+              {% else %}
+                  <div class="Index-No-Link">
+                      <img src="{% static 'images/logo.png' %}" alt="LinkLogo" width="150">
+                      <h2>You didn't create <span style="color: #283c86;">any Link yet!</span></h2>
+                      <h3> Create new <a href="{% url 'create-link' %}"><span style="color: #283c86;">Link</span></a></h3>
+                  </div>
+              {% endif %}
+            </div>
+
+
+            <!-- Profile for pc view  -->
+
+            <div class="col-md-4 pc-view">
+                <div class="position-fixed">
+                  <!-- Profile info section -->
+
+                    <!--Inherit from other template -->
+                    {% include 'savensharebase/profileinfo.html' %}
+
+                    <div class="row"> 
+                        <div class="col">
+                          <ul class="menubutton justify-content-center">
+                            <li><a href="{% url 'create-link' %}">Create</a></li>
+                            <li><a href="{% url 'sharelinks' %}">Share</a></li>
+                            <li><a href="#contact">Settings</a></li>
+                            <li><a href="{% url 'logout' %}" class="active">Logout</a></li>
+                          </ul>
+                        </div>
+                    </div>
+                    
+                    
+
+                    <p style="margin-top:20px; font-weight: bold; color: #11698E;">Recent share links</p>
+
+                    <hr style="margin-top:-10px;">
+
+                    <!-- Recent link section -->
+
+                    <div class="list-group">
+
+                      <!--Inherit from other template -->
+                      {% include 'savensharebase/sharelink.html' %}
+
+                    </div>
+
+                    <!-- Necessary link -->
+                    
+                    <div class="privacy-policy">
+                      <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Feedback</a></li>
+                      </ul>                      
+                    </div>
+                    
+                    <!-- Footer-->
+
+                    <footer class="footer">
+                      <div class="container">
+                        <span class="text-muted">&copy;2021 Save'nShare all right reserved</span>
+                      </div>
+                    </footer>
+                </div>
+            </div>
+
+            <!-- Profile for mobile view -->
+            <div class="col-md-4 mobile-view">
+              <!-- Profile info section -->
+              
+              <p style="margin-top:20px; font-weight: bold; color: #11698E;">Recent share links</p>
+
+              <hr style="margin-top:-10px;">
+
+              <!-- Recent link section -->
+
+              <div class="list-group">
+
+                    <!--Inherit from other template -->
+                    {% include 'savensharebase/sharelink.html' %}
+
+              </div>
+
+              <!-- Necessary link -->
+              
+              <div class="privacy-policy">
+                <ul>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Privacy</a></li>
+                  <li><a href="#">Terms</a></li>
+                  <li><a href="#">Feedback</a></li>
+                </ul>                      
+              </div>
+              
+              <!-- Footer-->
+
+              <footer class="footer">
+                <div class="container">
+                  <span class="text-muted">&copy;2021 Save'nShare.xyz all right reserved</span>
+                </div>
+              </footer>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

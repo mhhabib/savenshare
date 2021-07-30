@@ -1,0 +1,66 @@
+{% extends "savensharebase/base.html" %}
+{% load static %}
+
+{% block title %} Register - Save'nShare {% endblock %}
+{% block content %}
+
+
+<div class="container-fluid">
+    <div class="row">
+
+    <!-- Login credential for mobile devices-->
+        <div class="col-md-5 ui-auth mobile-dev">
+            <img src="{% static 'images/logo.png' %}">
+            <form method="POST">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="field">
+                        <label>{{ field.label_tag }}</label>
+                        {{ field }}
+                        {% for error in field.errors %}
+                            {% if forloop.counter0 %}
+                                <p style="color: red; font-size: 12px; margin-top:-35px;">{{ error }}</p>
+                            {% else %}
+                                <p style="color: red; font-size: 12px;">{{ error }}</p>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+                <button type="submit" class="btn-submission">Register</button>
+            </form>
+            <p>Already registered? <a href="{% url 'login' %}">login</a> from here. Forgot password? <a href="#">reset</a> now</p>
+        </div>
+
+        <!-- UI design for login page -->
+        <div class="col-md-7 ui-promo">
+            <img src="{% static 'images/ui-home.png' %}">
+            <h3>Create Save Share</h3>
+            <p>Collect your important link, create new blog post or draft post from other resources, save files what you need, save for ownself and share resource link to all or to your favorite one.</p>
+        </div>
+
+        <!-- Login credential for computer devices -->
+        <div class="col-md-5 ui-auth-reg computer-dev">
+            <img src="{% static 'images/logo.png' %}">
+            <form method="POST">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="field">
+                        <label>{{ field.label_tag }}</label>
+                        {{ field }}
+                        {% for error in field.errors %}
+                            {% if forloop.counter0 %}
+                                <p style="color: red; font-size: 12px; margin-top:-35px;">{{ error }}</p>
+                            {% else %}
+                                <p style="color: red; font-size: 12px;">{{ error }}</p>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+                <button type="submit" class="btn-submission">Register</button>
+            </form>
+            <p>Already registered? <a href="{% url 'login' %}">login</a> from here. Forgot password? <a href="#">reset</a> now</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

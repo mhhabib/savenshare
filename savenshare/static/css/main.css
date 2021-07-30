@@ -1,0 +1,448 @@
+body {
+  background-color: #E9EBF7 !important;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+*::selection {
+  background: #ff7b54;
+  color: white;
+}
+
+#pro-pic img {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.list-group a {
+  background-color: #E9EBF7 !important;
+  font-size: 18px;
+}
+
+.list-group a:hover {
+  color: #45a247;
+}
+
+.privacy-policy {
+  margin-top: 30px;
+}
+
+.mobile-view-menu {
+  margin-bottom: 20px;
+}
+
+.privacy-policy ul,
+.card-body ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.privacy-policy li{
+  float: left;
+}
+
+.privacy-policy li a {
+  display: inline-block;
+  color: #9799a1;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.privacy-policy li a:hover {
+  color: #45a247;
+}
+
+.footer {
+  margin-top: -10px;
+  color: #9799a1;
+  margin-bottom: 20px;
+}
+
+.header h3 {
+  color: #007BFF;
+  font-family: 'Raleway', sans-serif;
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 72px;
+  margin: 0 0 24px;
+  text-transform: uppercase;
+}
+
+.header p {
+  color: #696a6f;
+  font-family: 'Raleway', sans-serif;
+  margin-top: -20px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.card-header h5 {
+  color: #45a247;
+}
+
+.card-body {
+  overflow-y: scroll;
+  height: 150px;
+}
+
+.card-body ul li::before{
+  content: "→ ";
+  
+}
+
+.card-body ul li a {
+  text-decoration: none;
+  padding: 10px;
+  color: #11698E;
+  font-size: 18px;
+}
+
+.card-body ul li a:hover {
+  color: #45a247;
+}
+
+.card {
+  margin-bottom: 30px;
+}
+
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 571px) {
+  .computer-dev {
+    display: none;
+  }
+  .col-md-4.pc-view{
+    display: none;
+  }
+}
+
+@media only screen and (min-width : 570px) {
+
+  .mobile-view,
+  .mobile-view-menu {
+    display: none;
+  }
+}
+
+.v-scrollbar {
+  overflow-y: scroll;
+  height: 400px;
+}
+
+
+
+/* Post create page */
+
+.post-block {
+  background-color: #f7f8fc;
+  padding: 20px 15px;
+  border-radius: 10px;
+  border: 1px solid #babcc6;
+}
+
+
+.post-block label {
+  color: coral;
+  font-weight: bold;
+}
+.post-block nav{
+  background-color: yellowgreen;
+}
+.nav-pills .nav-link.activemenu,
+.nav-pills .show>.nav-link {
+  background: #283c86;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #45a247, #283c86);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #45a247, #283c86);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+}
+
+.postlink{
+  margin-top: 30px;
+}
+/* Custom Scrollbar */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #E9EBF7;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #283c86;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #45a247, #283c86);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #45a247, #283c86);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #283c86;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #45a247, #283c86);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #45a247, #283c86);
+  transition: 2s;
+}
+
+
+/* Login-registration page design */
+.ui-promo {
+  background: #283c86;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #45a247, #283c86);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #45a247, #283c86);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100vh;
+}
+
+.ui-promo img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  margin-top: 30%;
+}
+
+.ui-promo h3 {
+  color: #E9EBF7;
+  font-family: 'Raleway', sans-serif;
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 72px;
+  margin: 0 0 24px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.ui-promo p {
+  text-align: center;
+  margin-top: -3%;
+  color: #babcc6;
+  font-family: 'Raleway', sans-serif;
+  padding: 0px 70px;
+}
+
+.col-md-5.ui-auth {
+  margin-top: 5%;
+  padding: 5%;
+}
+
+.col-md-5.ui-auth-reg {
+  padding: 5%;
+  margin-top: 5px;
+}
+
+.btn-submission {
+  background: #283c86;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #45a247, #283c86);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #45a247, #283c86);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 5px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-submission:hover {
+  background: #283c86;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #45a247, #283c86);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #45a247, #283c86);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+}
+
+.ui-auth img,
+.ui-auth-reg img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  margin-bottom: 5%;
+
+}
+
+.ui-auth p,
+.ui-auth-reg p {
+  padding: 10px 0px;
+  font-weight: 450;
+  color: #45a247;
+  text-align: center;
+}
+
+.ui-auth p a,
+.ui-auth-reg p a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #283c86;
+}
+
+.ui-auth p a:hover,
+.ui-auth-reg p a:hover {
+  color: #FFA900;
+}
+
+
+@media only screen and (max-width : 768px) {
+  .computer-dev {
+    display: none;
+  }
+}
+
+@media only screen and (min-width : 767px) {
+  .mobile-dev {
+    display: none;
+  }
+}
+
+
+/* Post page design */
+.btn-submit{
+  background: #283c86;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #45a247, #283c86);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #45a247, #283c86);
+  display: block;
+  width: 100%;
+  border: none;
+  color: white;
+  padding: 10px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+.btn-submit:hover{
+  background: #283c86;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #45a247, #283c86);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #45a247, #283c86);
+}
+
+
+/* menubutton style for all page */
+
+.menubutton {
+  list-style-type: none;
+  margin: 0;
+  padding: 5px 0;
+  overflow: hidden;
+}
+
+.menubutton li {
+  float: left;
+  padding-left: 10px;
+}
+
+.menubutton li a {
+  display: inline-block;
+  text-align: center;
+  padding: 3px 8px;
+  text-decoration: none;
+  transform: skew(-20deg);
+  border: 2px solid #283c86;
+}
+
+.menubutton li a:hover {
+  background: #283c86;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #45a247, #283c86);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #45a247, #283c86);
+  color: #E9EBF7;
+  transition: 1s;
+}
+
+.active {
+  background: #283c86;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #45a247, #283c86);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #45a247, #283c86);
+  color: #E9EBF7;
+}
+
+
+/* Select and share page design */
+.select-link-section {
+  background-color: #f7f8fc;
+  padding: 20px 15px;
+  border-radius: 10px;
+  border: 1px solid #babcc6;
+  overflow-y: scroll;
+  height: 450px;
+}
+.select-link-section h3{
+  font-family: 'Secular One',
+  sans-serif;
+  color: #45a247;
+}
+.select-link-section img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+}
+.select-link-section h2{
+  font-family: 'Secular One',
+  sans-serif;
+  color: #45a247;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 20px;
+}
+.section-bottom {
+  margin-bottom: 50px;
+}
+
+/* Index no link found section */
+.Index-No-Link{
+  background-color: #f7f8fc;
+  padding: 20px 15px;
+  border-radius: 10px;
+  border: 1px solid #babcc6;
+  height: 550px;
+}
+.Index-No-Link img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+}
+.Index-No-Link h2,
+.Index-No-Link h3 {
+  font-family: 'Secular One',
+  sans-serif;
+  color: #45a247;
+  text-align: center;
+  margin-top: 40px;
+  line-height: 4px;
+}

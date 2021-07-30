@@ -1,0 +1,125 @@
+{% extends "savensharebase/base.html" %}
+{% load static %}
+{% block title %} {{object.posttitle}} {% endblock %}
+{% block content %}
+
+<div class="container" style="margin-top: 3.5rem;">
+    <div class="row">
+        <!-- main section -->
+
+        <div class="col-md-8">
+            <div class="header">
+                 <h3><a href="/" style="text-decoration: none;">Save'nShare</a></h3>
+                <p>Save your link, post and file. Then share with your favorite one</p>
+            </div>
+
+            <!-- mobile view menu -->
+            <div class="mobile-view-menu">
+                <ul class="menubutton justify-content-center">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="{% url 'sharelinks' %}">Share</a></li>
+                    <li><a href="#contact">Settings</a></li>
+                    <li><a href="{% url 'logout' %}" class="active">Logout</a></li>
+                </ul>
+            </div>
+            <div class="post-block">
+                <div class="postlink">
+                    <h3>{{object.posttitle}}</h3>
+                    <hr>
+                    <p>{{object.description|safe}}</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Profile for pc view  -->
+
+        <div class="col-md-4 pc-view">
+            <div class="position-fixed">
+                <!-- Profile info section -->
+
+                <!--Inherit from other template -->
+                {% include 'savensharebase/profileinfo.html' %}
+
+                <div class="row"> 
+                    <div class="col">
+                        <ul class="menubutton justify-content-center">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="{% url 'sharelinks' %}">Share</a></li>
+                            <li><a href="#contact">Settings</a></li>
+                            <li><a href="{% url 'logout' %}" class="active">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p style="margin-top:20px; font-weight: bold; color: #11698E;">Recent share links</p>
+
+                <hr style="margin-top:-10px;">
+
+                <!-- Recent link section -->
+
+                <div class="list-group">
+                    <!--Inherit from other template -->
+                    {% include 'savensharebase/sharelink.html' %}
+                </div>
+
+                <!-- Necessary link -->
+                
+                <div class="privacy-policy">
+                    <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Feedback</a></li>
+                    </ul>                      
+                </div>
+                
+                <!-- Footer-->
+
+                <footer class="footer">
+                    <div class="container">
+                    <span class="text-muted">&copy;2021 Save'nShare all right reserved</span>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+        <!-- Profile for mobile view -->
+        <div class="col-md-4 mobile-view">
+            <!-- Profile info section -->
+            
+            <p style="margin-top:20px; font-weight: bold; color: #11698E;">Recent share links</p>
+
+            <hr style="margin-top:-10px;">
+
+            <!-- Recent link section -->
+
+            <div class="list-group">
+                <!--Inherit from other template -->
+                {% include 'savensharebase/sharelink.html' %}
+            </div>
+
+            <!-- Necessary link -->
+            
+            <div class="privacy-policy">
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Feedback</a></li>
+            </ul>                      
+            </div>
+            
+            <!-- Footer-->
+
+            <footer class="footer">
+            <div class="container">
+                <span class="text-muted">&copy;2021 Save'nShare all right reserved</span>
+            </div>
+            </footer>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

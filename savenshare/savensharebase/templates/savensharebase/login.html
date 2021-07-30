@@ -1,0 +1,58 @@
+{% extends "savensharebase/base.html" %}
+{% load static %}
+
+{% block title %} Login - Save'nShare {% endblock %}
+{% block content %}
+<div class="container-fluid">
+      <div class="row">
+
+        <!-- Login credential for mobile devices-->
+
+        <div class="col-md-5 ui-auth mobile-dev">
+          <img src="{% static 'images/logo.png' %}">
+          <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" name="username" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn-submission">Login</button>
+          </form>
+          <p>Not registered yet? <a href="{% url 'register' %}">register</a> from here. Forgot password? <a href="#">reset</a> now</p>
+        </div>
+
+        <!-- UI design for login page -->
+        <div class="col-md-7 ui-promo">
+          <img src="{% static 'images/ui-home.png' %}">
+          <h3>Create Save Share</h3>
+          <p>Collect your important link, create new blog post or draft post from other resources, save files what you need, save for ownself and share resource link to all or to your favorite one.</p>
+        </div>
+
+        <!-- Login credential for computer devices -->
+        <div class="col-md-5 ui-auth computer-dev">
+          <img src="{% static 'images/logo.png' %}">
+          <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn-submission">Login</button>
+            {% for message in messages %}
+                <p style="color: coral; text-align: center;">{{ message }}</p>
+            {% endfor %}
+          </form>
+          <p>Not registered yet? <a href="{% url 'register' %}">register</a> from here. Forgot password? <a href="#">reset</a> now</p>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
